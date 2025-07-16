@@ -8,7 +8,7 @@ load_dotenv()
 
 app = Flask(__name__)
 CORS(app, origins=["http://localhost:5173"])  
-API_KEY = "AIzaSyDZAoSne2I4oh2D61rfUVvkB-m6LVKFJVg"
+API_KEY = {'API_KEY': os.getenv('API_KEY')}
 if not API_KEY:
     raise ValueError("API_KEY environment variable not set.")
 
